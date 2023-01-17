@@ -84,3 +84,30 @@ const cart = (state = 0, action) => {
         return state;
     }
 }
+```
+
+#### **STORE** - the current Redux application state lives in an object called the store.
+
+
+```
+import { createStore } from 'redux'
+
+let store = createStore(cart);
+
+```
+
+#### **DISPATCH** - the only way to update the state is to call store.dispatch() and pass in an action object.
+The store will run its reducer function and save the new state value inside:
+
+```
+store.dispatch(addToCart())
+store.dispatch(addToCart())
+store.dispatch(removeItem())
+```
+
+To check what our console shows we need to use a method called **getState** that returns the current state value:
+
+```
+let store = createStore(cart);
+store.subscribe(() => console.log(store.getState()));
+```
