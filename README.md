@@ -26,7 +26,7 @@ To use Redux for this, let's analyze the following importants Redux terms:
 - REDUCER
 - DISPATCH
   
-### ACTION - you can think of an action as an event that describes something that happened in the application.
+#### **ACTION** - you can think of an action as an event that describes something that happened in the application.
 Action does't change the state, it's just an intention to do something. 
 
 A - one of the possible user actions (add to cart)
@@ -58,3 +58,29 @@ const changeNumber = () => {
     }
 }
 ```
+
+#### **REDUCER** - you can think of a reducer as an event listener which handles events based on the received action (event) type.
+A description of how our intentions to make actions will change the state. Reducer does't change the state.
+
+The logic inside reducer functions typically follows the same series of steps:
+
+- Check to see if the reducer cares about this action
+- If so, make a copy of the state, update the copy with new values, and return it
+Otherwise, return the existing state unchanged.
+
+Reducers can use any kind of logic inside to decide what the new state should be: if/else, switch, loops, and so on. 
+I'll use switch logic here:
+
+```
+const cart = (state = 0, action) => {
+    switch(action.type) {
+        case "ADD_TO_CART":
+        return state +1;
+
+        case "REMOVE_ITEM":
+        return state -1;
+
+        default:
+        return state;
+    }
+}
