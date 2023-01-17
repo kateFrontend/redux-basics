@@ -111,3 +111,8 @@ To check what our console shows we need to use a method called **getState** that
 let store = createStore(cart);
 store.subscribe(() => console.log(store.getState()));
 ```
+
+## Work environement
+
+The best way to work with Redux is to create the separate folders (here I wrote the logic in index.js file).
+See examples on the code source in the src folder and index.js file.
