@@ -16,3 +16,45 @@ Redux can integrate with any UI framework (Angular, Vue, Vanila Js etc.), and is
 ```
 npm install redux react-redux
 ```
+
+## Terminology
+
+Let's imagine that the user wants to add items to the cart. \
+To use Redux for this, let's analyze the following importants Redux terms:
+- STORE
+- ACTION
+- REDUCER
+- DISPATCH
+  
+### ACTION - you can think of an action as an event that describes something that happened in the application.
+Action does't change the state, it's just an intention to do something. 
+
+A - one of the possible user actions (add to cart)
+
+```
+const addToCart = () => {
+    return {
+        type: "ADD_TO_CART"
+    }
+}
+```
+
+B - another one of the possible user actions (remove item from cart)
+
+```
+const removeItem = () => {
+    return {
+        type: "REMOVE_ITEM"
+    }
+}
+```
+
+C - another one of the possible user actions (change the quantity of the item in the cart)
+
+```
+const changeNumber = () => {
+    return {
+        type: "CHANGE_NUMBER"
+    }
+}
+```
